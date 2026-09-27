@@ -1,0 +1,60 @@
+{
+  "name": "ffmpeg-tiny",
+  "version": "0.1.0",
+  "description": "Small, prebuilt FFmpeg WebAssembly decoders for H.264, HEVC, VP8 and VP9 keyframes.",
+  "type": "module",
+  "license": "LGPL-2.1-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zllovesuki/ffmpeg-tiny.git"
+  },
+  "homepage": "https://github.com/zllovesuki/ffmpeg-tiny#readme",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./decoder.wasm": {
+      "types": "./src/wasm.d.ts",
+      "default": "./dist/decoder.wasm"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/core.mjs",
+    "dist/decoder.wasm",
+    "dist/ffmpeg-source.tar.gz",
+    "dist/licenses/",
+    "src/",
+    "scripts/build.mjs",
+    "tsconfig.json",
+    "BUILDING.md",
+    "NOTICE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs && tsc -p tsconfig.json",
+    "test": "node --test tests/*.test.mjs",
+    "test:fuzz": "node tests/fuzz.mjs",
+    "test:package": "node scripts/test-package.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "format:check": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.54.10",
+    "@types/node": "24.13.5",
+    "mediabunny": "1.60.0",
+    "prettier": "3.9.7",
+    "typescript": "7.0.2",
+    "vite": "8.3.0",
+    "wrangler": "4.132.0"
+  },
+  "packageManager": "pnpm@11.1.0"
+}

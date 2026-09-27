@@ -1,0 +1,6 @@
+{
+  "name": "ffmpeg-tiny-consumer",
+  "main": "worker.ts",
+  "compatibility_date": "2026-09-16",
+  "workers_dev": false,
+}

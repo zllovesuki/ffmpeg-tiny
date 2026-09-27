@@ -1,0 +1,16 @@
+ffmpeg-tiny is an independent package using FFmpeg's libavcodec and libavutil.
+FFmpeg is a trademark of Fabrice Bellard. This package is not an official
+FFmpeg distribution or an endorsement by the FFmpeg project.
+
+FFmpeg and this package's source are distributed under LGPL-2.1-or-later.
+See LICENSE. The build excludes GPL and nonfree components.
+
+The exact, unmodified FFmpeg source is included in dist/ffmpeg-source.tar.gz.
+The C shim and JavaScript wrapper source, compiler pin and build instructions
+are included so recipients can rebuild and replace the decoder. FFmpeg's
+individual source files retain their original copyright and license notices.
+
+The generated runtime also uses Emscripten and musl libc. Their notices and
+license texts are included in dist/licenses/. FFmpeg's source archive contains
+additional upstream tools and optional components under their own licenses;
+they are not all part of the decoder binary.

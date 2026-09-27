@@ -1,0 +1,5 @@
+/node_modules/
+/upstream/
+/build/
+/dist/
+/.wrangler/

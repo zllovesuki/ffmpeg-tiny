@@ -1,0 +1,8 @@
+/node_modules/
+/upstream/
+/build/
+/dist/
+/.wrangler/
+LICENSE
+NOTICE
+pnpm-lock.yaml
