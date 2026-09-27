@@ -52,12 +52,15 @@ source and the applicable notices.
 
 ## Publish
 
-Check that `package.json` names the public repository; the intended location is
-`zllovesuki/ffmpeg-tiny`. For the first release, sign in to a 2FA-enabled npm
-account with `npm login`, then run `npm publish <archive> --ignore-scripts`
-using the archive produced by `test:package`.
+For the first release, sign in to a 2FA-enabled npm account with `npm login`,
+then run `npm publish <archive> --ignore-scripts` using the archive produced
+by `test:package`.
 
 For later releases, configure an [npm trusted publisher](https://docs.npmjs.com/trusted-publishers/)
-for the repository and `publish.yml`. Update the package version and push a
-matching `v<version>` tag. The workflow builds and tests the archive, then
-publishes it in a separate job. Only the publishing job can request an OIDC token.
+with GitHub user `zllovesuki`, repository `ffmpeg-tiny` and workflow filename
+`publish.yml`. Leave the environment name empty and allow direct publishing
+with `npm publish`.
+
+Update the package version and push a matching `v<version>` tag. The workflow
+builds and tests the archive, then publishes it in a separate job. Only the
+publishing job can request an OIDC token.
